@@ -1,0 +1,128 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#startButton, #resetButton {
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background-color: #ffaa45;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#startButton:active, #resetButton:active {
+    background-color: #003d80;
+    transform: scale(0.95);
+}
+
+.dog-container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center; 
+    justify-content: center; 
+    width: 100%;
+}
+
+.dogImage {
+    width: 480px; 
+    height: auto; 
+    border: none;
+}
+
+.dogImage:hover {
+    cursor: url('imgs/anime_hand_cursor.png'), pointer; /* Change to a hand cursor */
+}
+
+
+.petting {
+    transform: scale(1.1); /* Slightly enlarge the image when hovered */
+}
+
+#message {
+    font-size: 24px;
+    color: #333;
+}
+
+#bubble {
+    width: 50px;
+    height: 50px;
+    border: #333;
+    /* background: rgb(36, 34, 34); */
+    opacity: 0;
+    transition: opacity 0.3s, transform 2s;
+    animation: floatBubble 2s ease-in-out infinite;
+    display: none;
+    z-index: 1;
+}
+
+
+
+@keyframes floatBubble {
+    0%,100% {
+        transform: translate(50px, 50px);
+    }
+    50% {
+        transform: translate(-10px, -10px) scale(2);
+    }
+    70%{
+        transform: translate(-30px, -30px) scale(4);
+    }
+}
+
+.hide {
+    display: none;
+}
+
+#audio-control {
+    position: fixed;
+    bottom: 20px;
+    left: 40px;
+    cursor: pointer;
+}
+
+#audio-control i {
+    font-size: 2rem;
+    color: #333;
+}
+
+.awake {
+    animation: shake 0.5s linear;
+}
+
+.hidden {
+    display: none;
+}
+
+.angryImage {
+    display: none;
+    width: 480px; 
+    height: auto; 
+    border: none;
+}
+
+.awake-background{
+    background-color:#99787F;
+    transition: background-color 1s;
+}
